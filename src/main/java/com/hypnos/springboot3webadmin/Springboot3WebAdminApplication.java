@@ -1,15 +1,21 @@
 package com.hypnos.springboot3webadmin;
 
+import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.context.ApplicationContext;
 
-@SpringBootApplication(exclude= {DataSourceAutoConfiguration.class, RedisAutoConfiguration.class})
+import java.util.Arrays;
+
+@SpringBootApplication(exclude = {RedisAutoConfiguration.class})
+@ImportAutoConfiguration({DruidDataSourceAutoConfigure.class})
 public class Springboot3WebAdminApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Springboot3WebAdminApplication.class, args);
+        ApplicationContext context = SpringApplication.run(Springboot3WebAdminApplication.class, args);
+        Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
     }
 
 }
