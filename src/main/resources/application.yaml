@@ -11,7 +11,7 @@ spring:
         filters: stat,wall,slf4j  #所有开启的功能
 
         stat-view-servlet: #监控页配置
-          enabled: true
+          enabled: false
           login-username: admin
           login-password: admin
           resetEnable: false
@@ -30,5 +30,4 @@ spring:
             enabled: true
             config:
               drop-table-allow: false
-
 debug: true

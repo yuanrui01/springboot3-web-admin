@@ -1,7 +1,5 @@
 package com.hypnos.springboot3webadmin.bean;
 
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,7 +10,6 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@TableName("user_tbl")
 public class User implements Serializable {
 
     @Serial
@@ -20,9 +17,7 @@ public class User implements Serializable {
     /**
      * 所有属性都应该在数据库中
      */
-    @TableField(exist = false)  //当前属性表中不存在
     private String userName;
-    @TableField(exist = false)
     private String password;
 
 

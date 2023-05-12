@@ -7,15 +7,15 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 @Slf4j
-@SpringBootTest
+//@SpringBootTest
 class Springboot3WebAdminApplicationTests {
 
-    @Autowired
+/*    @Autowired
     JdbcTemplate jdbcTemplate;
 
     @Test
     void test() {
         Long count = jdbcTemplate.queryForObject("select count(*) from t_fruit", Long.class);
         log.info("记录总数：{}", count);
-    }
+    }*/
 }

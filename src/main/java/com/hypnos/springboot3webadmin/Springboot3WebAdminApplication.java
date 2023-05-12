@@ -10,7 +10,7 @@ import org.springframework.context.ApplicationContext;
 import java.util.Arrays;
 
 @SpringBootApplication(exclude = {RedisAutoConfiguration.class})
-@ImportAutoConfiguration({DruidDataSourceAutoConfigure.class})
+//@ImportAutoConfiguration({DruidDataSourceAutoConfigure.class})
 public class Springboot3WebAdminApplication {
 
     public static void main(String[] args) {
