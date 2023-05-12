@@ -31,3 +31,7 @@ spring:
             config:
               drop-table-allow: false
 debug: true
+mybatis:
+  mapper-locations: classpath:mapper/*.xml # 指定扫描xml文件路径
+  configuration:
+    map-underscore-to-camel-case: true # 下划线转驼峰

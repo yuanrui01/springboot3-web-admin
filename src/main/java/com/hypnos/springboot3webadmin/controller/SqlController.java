@@ -1,8 +1,10 @@
 package com.hypnos.springboot3webadmin.controller;
 
+import com.hypnos.springboot3webadmin.bean.Fruit;
+import com.hypnos.springboot3webadmin.dao.FruitDAO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -14,13 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class SqlController {
 
     @Autowired
-    JdbcTemplate jdbcTemplate;
+    private FruitDAO fruitDAO;
 
-
-    @GetMapping("sql")
-    public String queryFruitNums(){
-        Long count = jdbcTemplate.queryForObject("select count(*) from t_fruit", Long.class);
-
-        return count.toString();
+    @GetMapping("/fruit/{fid}")
+    public Fruit getFruit(@PathVariable("fid") Integer fid){
+        return fruitDAO.selectOne(fid);
     }
 }
