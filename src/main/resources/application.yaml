@@ -30,10 +30,19 @@ spring:
             enabled: true
             config:
               drop-table-allow: false
+  data:
+    redis:
+      url: redis://yuanrui:A2w3d45v6h7u8@r-wz987skvkrzrdgf2q6pd.redis.rds.aliyuncs.com:6379
+
 debug: true
-mybatis:
+mybatis-plus:
   mapper-locations: classpath:mapper/*.xml # 指定扫描xml文件路径
   configuration:
     map-underscore-to-camel-case: true # 下划线转驼峰
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-
+management:
+  endpoints:
+    enabled-by-default: true # 默认开启所有监控断点
+    web:
+      exposure:
+        include: '*' # 以Web的方式暴露所有端点
